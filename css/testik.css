@@ -1,0 +1,482 @@
+/* Base styles */
+:root {
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --gray-50: #f9fafb;
+    --gray-100: #f3f4f6;
+    --gray-500: #6b7280;
+    --gray-700: #374151;
+    --gray-900: #111827;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+a{
+    text-decoration: none;
+  color: inherit;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.5;
+    color: var(--gray-700);
+}
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.logo-container {
+    text-align: center;
+    top: -85.5%;
+    left: 37%;
+    position: absolute;
+    z-index: 10;
+}
+
+.logo-container img {
+    width: 150px; /* Adjust logo size */
+    height: auto;
+}
+
+header {
+    position: relative;
+    background: url('C:/Users/admin/Desktop/testik/images/horse.jpg') no-repeat center center/cover;
+    height: 750px;
+    color: rgb(0, 0, 0);
+    display: flex;
+    align-items: center;
+    z-index: 1;
+    justify-content: center;
+    text-align: center;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.6); /* White overlay with 60% opacity */
+}
+
+.header-content {
+    position: relative;
+    top: 16%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    color: black;
+    width: 40%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+.scroll-down {
+    position: absolute;
+    top: 150%;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #0b2c56;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    text-decoration: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.scroll-down:hover {
+    background-color: #0a2445;
+    transform: translateX(-50%) scale(1.1);
+}
+
+.scroll-down span {
+    display: inline-block;
+}
+
+@media (max-width: 768px) {
+    .logo-container {
+        top: -30%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .logo-container img {
+        width: 100px; /* Adjust logo size for mobile */
+    }
+
+    header {
+        height: 600px;
+    }
+
+    .header-content {
+        width: 80%;
+        padding: 15px;
+    }
+
+    .scroll-down {
+        top: 103%;
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
+}
+
+/* Navigation */
+.navbar {
+    background: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    width: 100%;
+    z-index: 1000;
+    top: 0;
+    margin-top: 0.01%;
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 4rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--gray-900);
+}
+
+.horse-icon {
+    color: var(--primary);
+    margin-right: 0.5rem;
+    cursor: pointer;
+}
+.hor{
+    cursor: pointer;
+}
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: var(--gray-700);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+/* Hero Section */
+.hero {
+    padding-top: 8rem;
+    padding-bottom: 5rem;
+    background: linear-gradient(to bottom, #eff6ff, white);
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 2.25rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+.hero h1 span {
+    display: block;
+}
+
+.hero h1 .accent {
+    color: var(--primary);
+}
+
+.hero p {
+    max-width: 48rem;
+    margin: 0 auto 2rem;
+    color: var(--gray-500);
+    font-size: 1.125rem;
+}
+
+.cta-button {
+    display: inline-block;
+    background: var(--primary);
+    color: white;
+    padding: 1rem 2.5rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.cta-button:hover {
+    background: var(--primary-dark);
+}
+
+/* Services Section */
+.services {
+    padding: 5rem 0;
+    background: white;
+}
+
+.services h2,
+.bio h2,
+.appointment h2,
+.contacts h2 {
+    font-size: 2.25rem;
+    font-weight: 800;
+    text-align: center;
+    color: var(--gray-900);
+    margin-bottom: 1rem;
+}
+
+.section-description {
+    text-align: center;
+    color: var(--gray-500);
+    margin-bottom: 3rem;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 5rem;
+}
+
+.service-card {
+    background: var(--gray-50);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.2s;
+}
+
+.service-card:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.service-card h3 {
+    font-size: 1.25rem;
+    color: var(--gray-900);
+    margin-bottom: 0.5rem;
+}
+
+.service-card p {
+    color: var(--gray-500);
+}
+
+/* Bio Section */
+.bio {
+    padding: 5rem 0;
+    background: #eff6ff;
+}
+
+.bio-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.bio-text p {
+    color: var(--gray-500);
+    margin-bottom: 2rem;
+}
+
+.credentials {
+    list-style: none;
+}
+
+.credentials li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.credentials svg {
+    color: var(--primary);
+    margin-right: 1rem;
+}
+
+.bio-image img {
+    width: 100%;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Appointment Section */
+.appointment {
+    padding: 5rem 0;
+    background: white;
+}
+
+.appointment-form {
+    max-width: 32rem;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--gray-700);
+    margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.375rem;
+    transition: all 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.submit-button {
+    width: 100%;
+    background: var(--primary);
+    color: white;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 0.375rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.submit-button:hover {
+    background: var(--primary-dark);
+}
+
+/* Contact Section */
+.contacts {
+    padding: 5rem 0;
+    background: var(--gray-50);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.contact-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.contact-card svg {
+    color: var(--primary);
+    margin-right: 1rem;
+}
+
+/* Footer */
+.footer {
+    background: var(--gray-900);
+    padding: 3rem 0;
+    color: white;
+    
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.footer .logo {
+    color: white;
+}
+
+.footer p {
+    color: #9ca3af;
+}
+
+
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        opacity: 0;
+        transform: translateY(-20px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 4rem;
+        left: 0;
+        right: 0;
+        background: white;
+        padding: 1rem;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .bio-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .hero h1 {
+        font-size: 1.875rem;
+    }
+}
